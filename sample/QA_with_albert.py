@@ -2,15 +2,17 @@ import sys
 from asyncio import sleep
 from collections import OrderedDict
 from pathlib import Path
-
 import numpy as np
 import torch
-from inferlight import Handler, InferLight
 from sanic.response import json
 from torch import nn
 from torch.nn.utils.rnn import pad_sequence
 from transformers import AlbertConfig, AlbertModel, BertTokenizer
-
+import os
+import sys
+os.chdir(sys.path[0])
+sys.path.append("../")
+from inferlight import Handler, InferLight
 
 # define the model
 class PairModel(nn.Module):
